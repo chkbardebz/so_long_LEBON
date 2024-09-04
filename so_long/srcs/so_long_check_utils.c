@@ -6,7 +6,7 @@
 /*   By: judenis <judenis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 13:46:35 by judenis           #+#    #+#             */
-/*   Updated: 2024/03/19 12:41:23 by judenis          ###   ########.fr       */
+/*   Updated: 2024/09/04 04:33:54 by judenis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	check_inner_line(char *line, t_vars *vars)
 	size_t	i;
 
 	i = 0;
+	printf("%d\n", vars->lenline);
 	if (!line)
 		return (1);
 	while (line[i])
@@ -67,7 +68,7 @@ int	check_inner_line(char *line, t_vars *vars)
 		if ((line[i] != 'E' && line[i] != 'C' && line[i] != '1'
 				&& line[i] != '0' && line[i] != 'P' && line[i] != '\n'
 				&& line[i] != '\0')
-			|| ft_strlen(line) - 1 != (size_t)vars->lenline)
+			|| ft_strlen(line) - 1 != (size_t)vars->lenline || line[vars->lenline - 1] != '1' || line[0] != '1')
 			return (1);
 		i++;
 	}

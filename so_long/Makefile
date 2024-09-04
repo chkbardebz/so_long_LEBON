@@ -14,6 +14,7 @@ SO_LONG_SRC = 	srcs/convert_map.c srcs/movement.c srcs/ft_check.c srcs/so_long_u
 all :		$(NAME)
 
 mlx :
+				git clone https://github.com/42Paris/minilibx-linux.git minilibx
 				@cd minilibx && ./configure
 
 $(NAME) :
